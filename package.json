@@ -1,0 +1,52 @@
+{
+  "name": "vitoriasoft-atendimento",
+  "version": "1.0.0",
+  "description": "Central de atendimento da Vitória Soft",
+  "main": "electron/main.js",
+  "author": "Vitória Soft",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "br.com.vitoriasoft.atendimento",
+    "productName": "Vitoria Soft Atendimento",
+    "directories": {
+      "output": "instalador"
+    },
+    "files": [
+      "electron/**/*",
+      "renderer/**/*",
+      "parser.js",
+      "seed/dados.json",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Vitoria Soft Atendimento",
+      "installerLanguages": [
+        "pt_BR"
+      ],
+      "language": "1046",
+      "artifactName": "VitoriaSoft-Atendimento-Setup.${ext}"
+    }
+  }
+}

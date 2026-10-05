@@ -1,0 +1,9 @@
+node_modules/
+instalador/
+seed/dados.json
+nativo/bin/
+nativo/obj/
+nativo/publicar/
+nativo/publicar.zip
+*.exe
+*.blockmap
